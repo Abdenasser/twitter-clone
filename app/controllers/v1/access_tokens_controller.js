@@ -9,7 +9,17 @@ class V1AccessTokensController extends Nodal.Controller {
     AccessToken.login(this.params, (err, accessToken) => {
       this.respond(err || accessToken);
     });
-    
+
+  }
+
+  del() {
+
+    AccessToken.logout(this.params, (err, accessToken) => {
+
+      this.respond(err || accessToken);
+
+    });
+
   }
 }
 
