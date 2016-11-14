@@ -31,6 +31,7 @@ const IndexController = Nodal.require('app/controllers/index_controller.js');
 
 const V1TweetsController = Nodal.require('app/controllers/v1/tweets_controller.js');
 const V1UsersController = Nodal.require('app/controllers/v1/users_controller.js');
+const V1AccessTokensController = Nodal.require('app/controllers/v1/access_tokens_controller.js');
 
 /* generator: end imports */
 
@@ -40,6 +41,7 @@ router.route('/').use(IndexController);
 
 router.route('/v1/tweets/{id}').use(V1TweetsController);
 router.route('/v1/users/{id}').use(V1UsersController);
+router.route('/v1/access_tokens/{id}').use(V1AccessTokensController);
 
 /* generator: end routes */
 
