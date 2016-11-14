@@ -37,7 +37,9 @@ class V1TweetsController extends AuthController {
       if(err) {
         return this.respond(err);
       }
-      
+
+      this.params.body.user_id = user.get('id');
+
       Tweet.create(this.params.body, (err, model) => {
 
         this.respond(err || model);
