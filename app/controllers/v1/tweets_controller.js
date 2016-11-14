@@ -32,11 +32,7 @@ class V1TweetsController extends AuthController {
 
   create() {
 
-    this.authorize((err, accessToken, user) => {
-
-      if(err) {
-        return this.respond(err);
-      }
+    this.authorize((accessToken, user) => {
 
       this.params.body.user_id = user.get('id');
 
