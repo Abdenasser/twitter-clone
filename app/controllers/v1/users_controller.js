@@ -11,7 +11,7 @@ class V1UsersController extends Nodal.Controller {
       .where(this.params.query)
       .end((err, models) => {
 
-        this.respond(err || models);
+        this.respond(err || models, ['id', 'username', 'email', 'created_at']);
 
       });
 
@@ -31,7 +31,7 @@ class V1UsersController extends Nodal.Controller {
 
     User.create(this.params.body, (err, model) => {
 
-      this.respond(err || model);
+      this.respond(err || model, ['id', 'username', 'email', 'created_at']);
 
     });
 
